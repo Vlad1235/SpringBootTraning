@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--сделать так, чтобы Maven генерировал исполняемый jar-файл при сборке:-->
+    <packaging>jar</packaging>
+
+    <groupId>ru.springbootrestservice</groupId>
+    <artifactId>springbootrestservice</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!--specify the JDK version -->
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.1.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <!--Т.к. мы создаем REST API, то необходимо в качестве зависимости использовать spring-boot-starter-web,
+        которая неявно определяет все остальные зависимости, такие как spring-core, spring-web, spring-webmvc, servlet api,
+        и библиотеку jackson-databind
+        используя одну зависимость, мы можем создать полностью функциональное web-приложение
+        -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+    <!--добавляем Spring Boot плагин-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
