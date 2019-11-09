@@ -3,6 +3,8 @@ import org.springframework.web.bind.annotation.*;
 /**
  * создадим контроллер
  */
+@RestController
+@RequestMapping("/payment")
 public class PaymentController {
 
         private final String sharedKey = "SHARED_KEY";
